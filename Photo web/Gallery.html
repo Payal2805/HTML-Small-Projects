@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <section>
+        <ul>
+           <!-- <li class="list active" data-filter="all">All</li>-->
+            <li class="list" data-filter="nature">Nature</li>
+            <li class="list" data-filter="fashion">Fashion</li>
+            <li class="list" data-filter="wedding">Wedding</li>
+        </ul>
+        <div class="portfolio-item">
+            <div class="item nature"><img src="images/nature1.jpg"></div>
+            <div class="item fashion"><img src="images/fashion1.jpg"></div>
+            <div class="item wedding"><img src="images/wedding1.jpg"></div>
+            <div class="item nature"><img src="images/nature2.jpg"></div>
+            <div class="item fashion"><img src="images/fashion2.jpg"></div>
+            <div class="item wedding"><img src="images/wedding2.jpg"></div>
+            <div class="item nature"><img src="images/nature3.jpg"></div>
+            <div class="item fashion"><img src="images/fashion3.jpg"></div>
+            <div class="item wedding"><img src="images/wedding3.jpg"></div>
+            <div class="item nature"><img src="images/nature4.jpg"></div>
+            <div class="item fashion"><img src="images/fashion4.jpg"></div>
+            <div class="item wedding"><img src="images/wedding4.jpg"></div>
+            <div class="item nature"><img src="images/nature5.jpg"></div>
+            <div class="item fashion"><img src="images/fashion5.jpg"></div>
+            <div class="item wedding"><img src="images/wedding5.jpg"></div>
+        </div>
+    </section>
+        <button  onclick="document.location=' Photo.html'">
+          Back Page
+        </button>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+  integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+     $(document).ready(function(){
+        $('.list').click(function(){
+            const value =$(this).attr('data-filter');
+            if(value=='all'){
+                $('.item').show('1000');
+            }
+            else{
+                $('.item').not('.'+value).hide('1000');
+                $('.item').filter('.'+value).show('1000');
+            }
+        })
+        // add active class on select item
+
+        $('.list').click(function(){
+            $(this).addClass('active')
+        })
+     })
+  </script>
+</body>
+</html>
